@@ -1,0 +1,31 @@
+{
+  "name": "msg91-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syncloudsoftech/msg91-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syncloudsoftech/msg91-node/issues"
+  },
+  "homepage": "https://github.com/syncloudsoftech/msg91-node#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
