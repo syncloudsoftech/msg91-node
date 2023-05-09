@@ -1,0 +1,6 @@
+.husky/
+test/
+.eslintrc*
+.gitignore
+jest.config.js
+yarn.lock
