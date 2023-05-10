@@ -56,13 +56,19 @@ async function verifyOTP(key, number, otp) {
     throw new Error('Number must be numeric.');
   }
 
+  if (!otp) {
+    throw new Error('OTP cannot be empty.');
+  } else if (!otp.match(/^\d+/)) {
+    throw new Error('OTP must be numeric.');
+  }
+
   const headers = { ...defaultHeaders, authkey: key };
   const params = {
     mobile: number,
     otp,
   };
   const { status, data } = await axios.post(`${baseUrl}/otp/verify`, null, { headers, params });
-  return (status === 200 || status === 201) && data.type === 'success';
+  return status === 200 && data.type === 'success';
 }
 
 /**
@@ -81,6 +87,10 @@ async function resendOTP(key, number, voice = true) {
     throw new Error('Number cannot be empty.');
   } else if (!number.match(/^\d+/)) {
     throw new Error('Number must be numeric.');
+  }
+  
+  if (!(typeof voice === 'boolean')) {
+    throw new Error('Voice must be boolean.');
   }
 
   const headers = { ...defaultHeaders, authkey: key };
