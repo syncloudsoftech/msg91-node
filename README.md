@@ -1,12 +1,12 @@
-# MSG91 v5 NodeJs Wrapper 
- The node js library for msg91 to send, verify and resend OTP.
+# MSG91 for Noda.js
+ Unoffocial client for [MSG91](https://msg91.com/in) to send, resend and verify OTPs over SMS.
 
 ## Usage
 
 ```javascript
 
 const msg91 = require("msg91-node")("MSG91_KEY");
-const phoneNumber = "XXXXXXXXXX";
+const number = "XXXXXXXXXX";
 
 /**
  * Send OTP to given phone number
@@ -14,7 +14,7 @@ const phoneNumber = "XXXXXXXXXX";
  * @param {string} templateId
  * @returns {Promise<boolean>}
  */
-const sent = await msg91.send(phoneNumber, "MSG91_TEMPLATE_ID");
+const sent = await msg91.send(number, "MSG91_TEMPLATE_ID");
 
 /**
  * Verify OTP to given phone number with given otp
@@ -22,7 +22,7 @@ const sent = await msg91.send(phoneNumber, "MSG91_TEMPLATE_ID");
  * @param {string} otp
  * @returns {Promise<boolean>}
  */
-const verify = await msg91.verify(phoneNumber, otp);
+const verify = await msg91.verify(number, otp);
 
 /**
  * Resend OTP to given phone number
@@ -30,12 +30,8 @@ const verify = await msg91.verify(phoneNumber, otp);
  * @param {boolean} voice
  * @returns {Promise<boolean>}
  */
-const resend = await msg91.resend(phoneNumber);
+const resend = await msg91.resend(number);
 ```
-## Update .env variables
-MSG91_KEY={Your key}
-
-MSG91_TEMPLATE_ID={Your template ID}
 
 ## License
 
