@@ -1,4 +1,4 @@
-# MSG91 for Noda.js
+# MSG91 for Node.js
  Unoffocial client for [MSG91](https://msg91.com/in) to send, resend and verify OTPs over SMS.
 
 ## Usage
